@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exemplo de Uso da API</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Exemplo de Uso da API</h1>
+    <p>Servidor: <code id="apiUrl"></code></p>
+
+    <div class="container">
+      <!-- Seção de JSON Bins -->
+      <section class="card">
+        <h2>JSON Bins</h2>
+        <div class="form-group">
+          <label for="jsonContent">Conteúdo do JSON para Criar/Atualizar:</label>
+          <textarea id="jsonContent" rows="5">{ "nome": "Exemplo", "valor": 123 }</textarea>
+        </div>
+        <button id="createBinBtn">Criar Bin</button>
+        <hr />
+        <div class="form-group">
+          <label for="binId">ID do Bin para Ler/Atualizar/Deletar:</label>
+          <input type="text" id="binId" placeholder="Cole o ID do bin aqui" />
+        </div>
+        <div class="button-group">
+          <button id="getBinBtn">Ler Bin</button>
+          <button id="updateBinBtn">Atualizar Bin</button>
+          <button id="deleteBinBtn" class="danger">Deletar Bin</button>
+        </div>
+      </section>
+
+      <!-- Seção de Arquivos -->
+      <section class="card">
+        <h2>Upload de Arquivos</h2>
+        <div class="form-group">
+          <label for="fileInput">Selecione um arquivo:</label>
+          <input type="file" id="fileInput" />
+        </div>
+        <button id="uploadFileBtn">Enviar Arquivo</button>
+      </section>
+    </div>
+
+    <!-- Área de Resultados -->
+    <section class="results-card">
+      <h2>Resultados</h2>
+      <pre id="results"></pre>
+    </section>
+
+    <script src="script.js"></script>
+  </body>
+</html>

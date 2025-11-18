@@ -9,15 +9,16 @@ const PORT = process.env.PORT || 3000;
 app.use(cors()); // Habilita o CORS para todas as origens, essencial para testes de frontend
 app.use(express.json()); // Habilita o parse de JSON no corpo das requisições
 
-// --- Servir Arquivos Estáticos (Frontend) ---
+// --- Servir Arquivos Estáticos da pasta 'exemple' ---
+// Isso permite que o navegador carregue o script.js e style.css referenciados no HTML.
 app.use(express.static(path.join(__dirname, "exemple")));
 
 // --- Rotas da API ---
 
-// Rota raiz para um teste rápido no navegador
+// Rota raiz ('/'): Serve a página principal do frontend.
 app.get("/", (req, res) => {
-  console.log("Requisição recebida na rota '/'");
-  res.status(200).send("Servidor de teste simples está no ar!");
+  console.log("Servindo a página index.html");
+  res.sendFile(path.join(__dirname, "exemple", "index.html"));
 });
 
 // Rota de API para testar a resposta JSON

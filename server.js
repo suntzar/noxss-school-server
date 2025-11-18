@@ -3,11 +3,13 @@ const multer = require("multer");
 const path = require("path");
 const fs = require("fs");
 const { v4: uuidv4 } = require("uuid");
+const cors = require("cors");
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
 // Middlewares
+app.use(cors()); // Habilita o CORS para todas as origens
 app.use(express.json()); // Para parsear JSON no corpo das requisições
 app.use(express.urlencoded({ extended: true })); // Para parsear dados de formulários
 

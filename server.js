@@ -1,5 +1,6 @@
 const express = require("express");
 const cors = require("cors");
+const path = require("path"); // Importa o módulo 'path' do Node.js
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -7,6 +8,9 @@ const PORT = process.env.PORT || 3000;
 // Middlewares
 app.use(cors()); // Habilita o CORS para todas as origens, essencial para testes de frontend
 app.use(express.json()); // Habilita o parse de JSON no corpo das requisições
+
+// --- Servir Arquivos Estáticos (Frontend) ---
+app.use(express.static(path.join(__dirname, "exemple")));
 
 // --- Rotas da API ---
 

@@ -1,0 +1,20 @@
+{
+  "name": "noxss-school-server",
+  "version": "1.0.0",
+  "description": "Servidor Node.js para armazenamento de JSONs e arquivos.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2",
+    "multer": "^1.4.5-lts.1",
+    "uuid": "^9.0.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  }
+}
